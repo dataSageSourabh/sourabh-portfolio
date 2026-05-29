@@ -19,6 +19,7 @@
       <li><a href="#education">Education</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <button id="dark-toggle" class="dark-toggle" title="Toggle Dark Mode">🌙</button>
     <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
       <span></span>
       <span></span>
@@ -340,64 +341,8 @@
   <!-- Back to top -->
   <button id="back-to-top" title="Back to top">↑</button>
 
-  <!-- ============ SCRIPT (add your JS here or link script.js) ============ -->
-  <script>
-    /* ------- Navbar: scroll shadow + active link highlight ------- */
-    const navbar = document.getElementById('navbar');
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('#nav-links a');
-
-    window.addEventListener('scroll', () => {
-      // Shadow on scroll
-      navbar.classList.toggle('scrolled', window.scrollY > 20);
-
-      // Active nav link
-      let current = '';
-      sections.forEach(sec => {
-        if (window.scrollY >= sec.offsetTop - 100) current = sec.getAttribute('id');
-      });
-      navLinks.forEach(link => {
-        link.classList.toggle('active', link.getAttribute('href') === '#' + current);
-      });
-
-      // Back to top
-      document.getElementById('back-to-top').classList.toggle('visible', window.scrollY > 400);
-    });
-
-    /* ------- Mobile hamburger menu ------- */
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('open');
-      mobileMenu.classList.toggle('open');
-    });
-
-    // Close mobile menu on link click
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('open');
-        mobileMenu.classList.remove('open');
-      });
-    });
-
-    /* ------- Scroll reveal ------- */
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
-
-    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-    /* ------- Back to top ------- */
-    document.getElementById('back-to-top').addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  </script>
+  <!-- All JS is in script.js -->
+  <script src="script.js"></script>
 
 </body>
 </html>

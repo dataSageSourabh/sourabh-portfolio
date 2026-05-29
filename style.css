@@ -933,6 +933,84 @@ footer span {
 }
 
 /* ============================================
+   DARK MODE TOGGLE BUTTON
+   ============================================ */
+
+.dark-toggle {
+  background: none;
+  border: 1.5px solid var(--border);
+  border-radius: 2px;
+  width: 36px; height: 36px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: border-color 0.2s, transform 0.2s;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.dark-toggle:hover {
+  border-color: var(--accent);
+  transform: rotate(20deg);
+}
+
+/* ============================================
+   DARK MODE — body.dark pe ye variables apply honge
+   ============================================ */
+
+body.dark {
+  --ink: #f0ede8;
+  --ink2: #b8b4ae;
+  --ink3: #7a7672;
+  --bg: #141414;
+  --bg2: #1c1c1c;
+  --white: #1a1a1a;
+  --border: rgba(255,255,255,0.1);
+  --border2: rgba(255,255,255,0.06);
+}
+
+body.dark nav {
+  background: rgba(20, 20, 20, 0.92);
+}
+
+body.dark .nav-mobile {
+  background: #1a1a1a;
+}
+
+body.dark .hero-right {
+  background: #0a0a0a;
+}
+
+body.dark #projects {
+  background: #0a0a0a;
+}
+
+body.dark .project-card {
+  background: #0a0a0a;
+}
+
+body.dark .project-card:hover {
+  background: rgba(255,255,255,0.02);
+}
+
+body.dark #back-to-top {
+  background: var(--accent);
+}
+
+body.dark .skill-card:hover {
+  background: #222;
+}
+
+body.dark .edu-block,
+body.dark .cert-item,
+body.dark .skill-card {
+  background: #1e1e1e;
+}
+
+/* Smooth transition for dark mode switch */
+body {
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ============================================
    ANIMATIONS
    ============================================ */
 
