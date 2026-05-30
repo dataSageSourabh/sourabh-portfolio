@@ -55,6 +55,16 @@ nav {
   transition: box-shadow 0.3s;
 }
 
+.nav-photo {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--accent);
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
 nav.scrolled {
   box-shadow: 0 2px 20px rgba(0,0,0,0.08);
 }
@@ -317,10 +327,11 @@ nav ul a.active::after { width: 100%; }
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-display);
+  object-fit: cover;
+  /* font-family: var(--font-display);
   font-size: 3.5rem;
   font-weight: 800;
-  color: #fff;
+  color: #fff; */
   margin-bottom: 2rem;
   z-index: 1;
   position: relative;
